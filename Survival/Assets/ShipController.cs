@@ -8,7 +8,6 @@ public class ShipController : MonoBehaviour
     private float activeForwardSpeed, activeStrafeSpeed, activeHoverSpeed;
     private float forwardAcceleration = 2.5f, strafeAcceleration = 2f, hoverAcceleration = 2f;
     public float lookRateSpeed = 90f;
-    private Vector2 lookInput, screenCenter, mouseDistance;
     private float rollInput, horizontalInput, verticalInput;
     public float rollSpeed = 90f, rollAcceleration = 3.5f;
 
@@ -16,20 +15,13 @@ public class ShipController : MonoBehaviour
 
     void Start()
     {
-        screenCenter.x = Screen.width * .5f;
-        screenCenter.y = Screen.height * .5f;
+        
     }
 
     void Update()
     {
         keyListener();
        
-        lookInput.x = Input.mousePosition.x;
-        lookInput.y = Input.mousePosition.y;
-
-        mouseDistance.x = (lookInput.x - screenCenter.x) / screenCenter.x;
-        mouseDistance.y = (lookInput.y - screenCenter.y) / screenCenter.y;
-
         rollInput = Mathf.Lerp(rollInput, Input.GetAxisRaw("Roll"), rollAcceleration * Time.deltaTime);
         horizontalInput = Mathf.Lerp(horizontalInput, Input.GetAxisRaw("Horizontal"), 0.5f * Time.deltaTime);
         verticalInput = Mathf.Lerp(verticalInput, Input.GetAxisRaw("Vertical"), 0.5f * Time.deltaTime);

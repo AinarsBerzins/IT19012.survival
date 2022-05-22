@@ -3,7 +3,37 @@ guid: d67bade2a0c40284598699c70aa40387
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_glass_outside
+    second: {fileID: 2100000, guid: 908a9f2594813974eb4f5a58a190e02c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_hull
+    second: {fileID: 2100000, guid: f3db86631f74c3c47b815eb9dbfde836, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_ion_beam
+    second: {fileID: 2100000, guid: 13f14b4a1f2eea645a72530a290d56cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_laser_core
+    second: {fileID: 2100000, guid: 9c5e23b6dca421e4996a0cd144304643, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_rocket
+    second: {fileID: 2100000, guid: ada85cbadc941af42a94af4a5c911d8a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_void
+    second: {fileID: 2100000, guid: 730e0b84f12f6e24395a125d97f42df7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

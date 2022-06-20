@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ShipController : MonoBehaviour
 {
+    private Animator mAnimator;
     public float forwardSpeed = 1000f, strafeSpeed = 7.5f, hoverSpeed = 5f;
     private float activeForwardSpeed, activeStrafeSpeed, activeHoverSpeed;
     private float forwardAcceleration = 2.5f, strafeAcceleration = 2f, hoverAcceleration = 2f;
@@ -15,7 +16,7 @@ public class ShipController : MonoBehaviour
 
     void Start()
     {
-        
+        mAnimator = GetComponent<Animator>();
     }
 
     void Update()
@@ -35,6 +36,18 @@ public class ShipController : MonoBehaviour
 
         Debug.Log("time.deltatime: " + Time.deltaTime);
         Debug.Log("rollInput: " + rollInput);
+
+        if(mAnimator != null)
+        {
+            if(Input.GetKeyDown(KeyCode.Alpha1) && !mAnimator.GetCurrentAnimatorStateInfo(0).IsName("IdleFight"))
+                mAnimator.SetTrigger("TrFight");
+            if(Input.GetKeyDown(KeyCode.Alpha2) && !mAnimator.GetCurrentAnimatorStateInfo(0).IsName("IdlePatrol"))
+                mAnimator.SetTrigger("TrPatrol");
+            if(Input.GetKeyDown(KeyCode.Alpha3) && !mAnimator.GetCurrentAnimatorStateInfo(0).IsName("IdleCruise"))
+                mAnimator.SetTrigger("TrCruise");
+            if(Input.GetKeyDown(KeyCode.Space) && !mAnimator.GetCurrentAnimatorStateInfo(0).IsName("IdleFight"))
+                mAnimator.SetTrigger("TrFight");
+        }
     }
 
     void keyListener(){

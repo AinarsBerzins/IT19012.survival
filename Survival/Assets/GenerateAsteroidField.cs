@@ -5,9 +5,9 @@ using UnityEngine;
 public class GenerateAsteroidField : MonoBehaviour
 {
     public Transform asteroidPrefab;
-    public int fieldRadius = 100;
-    public int asteroidCount = 500;
-    // Start is called before the first frame update
+    public int fieldRadius = 500;
+    public int asteroidCount = 1000;
+
     void Start()
     {
         for (int loop = 0; loop < asteroidCount; loop++){

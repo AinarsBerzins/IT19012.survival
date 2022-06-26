@@ -14,9 +14,11 @@ GameObject:
   - component: {fileID: 8321760638814945676}
   - component: {fileID: -8462221234407993852}
   - component: {fileID: 5224707626793374988}
+  - component: {fileID: 3989849402189158866}
+  - component: {fileID: -389291371966517888}
   m_Layer: 0
   m_Name: rock_prefab
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +111,7 @@ MeshCollider:
   m_GameObject: {fileID: 3438626271335288685}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
@@ -126,3 +128,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42caa445860bcfe4a9488118373bea8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minSpinSpeed: 1
+  maxSpinSpeed: 5
+  minThrust: 0.1
+  maxThrust: 1
+--- !u!135 &3989849402189158866
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3438626271335288685}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.6363573
+  m_Center: {x: 1.6357937, y: -1.6799413, z: 0.77943945}
+--- !u!114 &-389291371966517888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3438626271335288685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd3006b48434bd4ba8966e09c70dd1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectSound: {fileID: 8360498402007331165, guid: a9821e342db26aa49b41da60e17c4d01, type: 3}

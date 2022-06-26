@@ -7,7 +7,7 @@ public class AddRandomMovement : MonoBehaviour
     public float minSpinSpeed = 1f;
     public float maxSpinSpeed = 5f;
     public float minThrust = 0.1f;
-    public float maxThrust = 0.5f;
+    public float maxThrust = 1f;
     private float spinSpeed;
 
     // Start is called before the first frame update

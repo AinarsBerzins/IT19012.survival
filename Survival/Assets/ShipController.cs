@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ShipController : MonoBehaviour
 {
+    private Rigidbody rg;
     private Animator mAnimator;
     public float forwardSpeed = 1000f, strafeSpeed = 7.5f, hoverSpeed = 5f;
     private float activeForwardSpeed, activeStrafeSpeed, activeHoverSpeed;
@@ -17,6 +18,7 @@ public class ShipController : MonoBehaviour
     void Start()
     {
         mAnimator = GetComponent<Animator>();
+        rg = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -34,8 +36,8 @@ public class ShipController : MonoBehaviour
         transform.Rotate(-verticalInput * lookRateSpeed * Time.deltaTime, horizontalInput * lookRateSpeed * Time.deltaTime, rollInput * rollSpeed * Time.deltaTime, Space.Self);
         transform.position += transform.forward * activeForwardSpeed * Time.deltaTime;
 
-        Debug.Log("time.deltatime: " + Time.deltaTime);
-        Debug.Log("rollInput: " + rollInput);
+        // Debug.Log("time.deltatime: " + Time.deltaTime);
+        // Debug.Log("rollInput: " + rollInput);
 
         if(mAnimator != null)
         {
@@ -47,11 +49,16 @@ public class ShipController : MonoBehaviour
                 mAnimator.SetTrigger("TrCruise");
             if(Input.GetKeyDown(KeyCode.Space) && !mAnimator.GetCurrentAnimatorStateInfo(0).IsName("IdleFight"))
                 mAnimator.SetTrigger("TrFight");
+            if(Input.GetKeyDown(KeyCode.Space)){
+                    rg.velocity = Vector3.zero;
+                    rg.angularVelocity = Vector3.zero; 
+                }
+            
         }
     }
 
     void keyListener(){
-         if (Input.GetKeyDown(KeyCode.Alpha1)) inputSpeed = 5f; //ir kāds labāks veids, kā šo checkot?
+        if (Input.GetKeyDown(KeyCode.Alpha1)) inputSpeed = 5f; //ir kāds labāks veids, kā šo checkot?
         else if (Input.GetKeyDown(KeyCode.Alpha2)) inputSpeed = 15f;
         else if (Input.GetKeyDown(KeyCode.Alpha3)) inputSpeed = 30f;
         else if (Input.GetKeyDown(KeyCode.Space)) inputSpeed = 0f;

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Rock
   - Wing
+  - Asteroid
+  - SpaceStation
   layers:
   - Default
   - TransparentFX

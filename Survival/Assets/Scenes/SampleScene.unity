@@ -832,6 +832,7 @@ GameObject:
   m_Component:
   - component: {fileID: 983360524}
   - component: {fileID: 983360523}
+  - component: {fileID: 983360525}
   m_Layer: 0
   m_Name: fieldCenter
   m_TagString: Untagged
@@ -851,7 +852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15e833fa6ad596b428689c7067ab5d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteroidPrefab: {fileID: 2662653003218310615, guid: b7c999203db85294dbcfb5646eed47dd, type: 3}
+  rockPrefab: {fileID: 2662653003218310615, guid: b7c999203db85294dbcfb5646eed47dd, type: 3}
   fieldRadius: 500
   asteroidCount: 5000
 --- !u!4 &983360524
@@ -868,6 +869,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &983360525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983360522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e0abb0dc8fefe044bb334a7c58abc55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroidPrefab: {fileID: 2083749805977132417, guid: ecef85cc4aadfea42988ee1704a9934d, type: 3}
+  fieldRadius: 1000
+  respawnTime: 2
 --- !u!1 &1042412432
 GameObject:
   m_ObjectHideFlags: 0
@@ -1045,7 +1061,7 @@ GameObject:
   - component: {fileID: 1330684860}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: SpaceStation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

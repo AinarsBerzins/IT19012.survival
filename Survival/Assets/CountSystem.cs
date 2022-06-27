@@ -7,6 +7,7 @@ public class CountSystem : MonoBehaviour
 {
     public GameObject DebrisText;
     public static int theDebris;
+    public static int stationDebris;
     //public AudioSource collectSound;
 
     private void Update()

@@ -58,9 +58,9 @@ public class ShipController : MonoBehaviour
     }
 
     void keyListener(){
-        if (Input.GetKeyDown(KeyCode.Alpha1)) inputSpeed = 5f; //ir kāds labāks veids, kā šo checkot?
-        else if (Input.GetKeyDown(KeyCode.Alpha2)) inputSpeed = 15f;
-        else if (Input.GetKeyDown(KeyCode.Alpha3)) inputSpeed = 30f;
+        if (Input.GetKeyDown(KeyCode.Alpha1)) inputSpeed = 15f; //ir kāds labāks veids, kā šo checkot?
+        else if (Input.GetKeyDown(KeyCode.Alpha2)) inputSpeed = 25f;
+        else if (Input.GetKeyDown(KeyCode.Alpha3)) inputSpeed = 50f;
         else if (Input.GetKeyDown(KeyCode.Space)) inputSpeed = 0f;
     }
 }

@@ -6,8 +6,8 @@ public class componentTrigger : MonoBehaviour
 {
     
     private void OnTriggerEnter(Collider other){
-        //if(other.gameObject.tag == "Rock") {
-        //    Destroy(other.gameObject);
-        //}        
+        if(other.gameObject.tag == "Asteroid") {
+            //Destroy(other.gameObject);
+        }        
     }
 }

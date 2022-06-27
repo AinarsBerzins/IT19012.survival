@@ -142,3 +142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6fbdb6be8857cf48a7166b5f517ec55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rockPrefab: {fileID: 2662653003218310615, guid: b7c999203db85294dbcfb5646eed47dd, type: 3}
+  fieldRadius: 10
+  asteroidCount: 3

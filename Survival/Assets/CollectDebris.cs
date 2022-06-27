@@ -17,6 +17,7 @@ public class CollectDebris : MonoBehaviour
         }
         if(other.gameObject.tag == "SpaceStation")
         {
+            CountSystem.stationDebris += 50;
             Destroy(gameObject);
         }
         if(other.gameObject.tag == "Asteroid")

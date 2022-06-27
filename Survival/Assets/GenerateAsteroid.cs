@@ -7,7 +7,7 @@ public class GenerateAsteroid : MonoBehaviour
     public Transform asteroidPrefab;
     public int fieldRadius = 500;
     public float respawnTime = 1.0f;
-    Vector3 dir = new Vector3(0, 0, 0);
+    public static int life = 100;
 
     void Start()
     {

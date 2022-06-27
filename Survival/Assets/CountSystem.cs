@@ -12,6 +12,7 @@ public class CountSystem : MonoBehaviour
 
     private void Update()
     {
-        DebrisText.GetComponent<Text>().text = "Debris: " + theDebris;
+        DebrisText.GetComponent<Text>().text = "Debris: " + theDebris + "\n" +
+                                               "Station debris: " + stationDebris;
     }
 }

@@ -9,12 +9,23 @@ public class AsteroidTrigger : MonoBehaviour
     public int asteroidCount = 3;
 
     private void OnTriggerEnter(Collider other)
-    {        
-        if (other.gameObject.tag == "Wing")
+    {
+        if (other.gameObject.tag == "Wing" || other.gameObject.tag == "SpaceStation")
         {
-            generateRocksOnDie();
-            Destroy(gameObject);
-        }        
+            GenerateAsteroid.life -= 70;
+            if (GenerateAsteroid.life <= 0) die();
+        }
+        if (other.gameObject.tag == "Bullet")
+        {
+            GenerateAsteroid.life -= 1;
+            if (GenerateAsteroid.life <= 0) die();
+        }
+    }
+
+    private void die()
+    {
+        generateRocksOnDie();
+        Destroy(gameObject);
     }
 
     private void generateRocksOnDie()

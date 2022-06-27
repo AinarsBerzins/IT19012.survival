@@ -12,7 +12,7 @@ public class AsteroidTrigger : MonoBehaviour
     {
         if (other.gameObject.tag == "Wing" || other.gameObject.tag == "SpaceStation")
         {
-            GenerateAsteroid.life -= 70;
+            GenerateAsteroid.life -= 100;
             if (GenerateAsteroid.life <= 0) die();
         }
         if (other.gameObject.tag == "Bullet")

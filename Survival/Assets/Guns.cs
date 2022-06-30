@@ -4,36 +4,35 @@ using UnityEngine;
 
 public class Guns : MonoBehaviour
 {
-    public Transform bulletSpawner01;
-    public Transform bulletSpawner02;
-    public Transform bulletSpawner03;
-    public Transform bulletSpawner04;
+    public Transform[] bulletSpawner;
     public GameObject bulletPrefab;
-    public float bulletSpeed = 100;
-    public float minDelay = 0.1f;
-    public float maxDelay = 0.3f;
 
+    private float bulletSpeed = 100;
+    private float minDelay = 0.05f;
+    private float maxDelay = 0.08f;
+    private bool isFiring = false;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetMouseButton(0) && isFiring == false)
         {
-            StartCoroutine(shoot(bulletSpawner01));
-            StartCoroutine(shoot(bulletSpawner02));
-            StartCoroutine(shoot(bulletSpawner03));
-            StartCoroutine(shoot(bulletSpawner04));
+            isFiring = true;
+            StartCoroutine(shoot());
         }
-
     }
 
-    IEnumerator shoot(Transform turret)
+    IEnumerator shoot()
     {
-        float shootDelay = Random.Range(minDelay, maxDelay);
-        yield return new WaitForSeconds(shootDelay);
-        shootTurret01(turret);
+        foreach(Transform turret in bulletSpawner)
+        {
+            shootTurret(turret);
+            float shootDelay = Random.Range(minDelay, maxDelay);
+            yield return new WaitForSeconds(shootDelay);
+        }
+        isFiring = false;
     }
 
-    private void shootTurret01(Transform turret)
+    private void shootTurret(Transform turret)
     {
         var bullet = Instantiate(bulletPrefab, turret.position, turret.rotation);
         bullet.GetComponent<Rigidbody>().velocity = turret.forward * bulletSpeed;

@@ -1950,14 +1950,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea87e638bbfeb5249b307d3a033dd8a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawner01: {fileID: 433484595}
-  bulletSpawner02: {fileID: 527336522}
-  bulletSpawner03: {fileID: 70802414}
-  bulletSpawner04: {fileID: 1486900520}
+  bulletSpawner:
+  - {fileID: 433484595}
+  - {fileID: 527336522}
+  - {fileID: 70802414}
+  - {fileID: 1486900520}
   bulletPrefab: {fileID: 6092305799594940600, guid: 6303eac415bc1e949be9a59f01d8bc15, type: 3}
   bulletSpeed: 100
-  minDelay: 0.1
-  maxDelay: 0.3
+  minDelay: 0.05
+  maxDelay: 0.08
 --- !u!1 &2017061049 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4587203410527729954, guid: beef41ce0cb79e84a87e9221d5ca52e1, type: 3}
